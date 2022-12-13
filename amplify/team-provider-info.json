@@ -1,0 +1,39 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-scicalapp-dev-210407-authRole",
+      "UnauthRoleArn": "arn:aws:iam::266570965099:role/amplify-scicalapp-dev-210407-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::266570965099:role/amplify-scicalapp-dev-210407-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-scicalapp-dev-210407-deployment",
+      "UnauthRoleName": "amplify-scicalapp-dev-210407-unauthRole",
+      "StackName": "amplify-scicalapp-dev-210407",
+      "StackId": "arn:aws:cloudformation:us-east-1:266570965099:stack/amplify-scicalapp-dev-210407/6df7df30-7a8a-11ed-aa91-0e7e8992ea91",
+      "AmplifyAppId": "d354mzc4kk41vc"
+    },
+    "categories": {
+      "function": {
+        "scicalApiFunction": {
+          "deploymentBucketName": "amplify-scicalapp-dev-210407-deployment",
+          "s3Key": "amplify-builds/scicalApiFunction-65622b764b524d364d6a-build.zip"
+        },
+        "scicalSendEmailToApprove": {
+          "deploymentBucketName": "amplify-scicalapp-dev-210407-deployment",
+          "s3Key": "amplify-builds/scicalSendEmailToApprove-506f3935467848444e78-build.zip"
+        }
+      },
+      "storage": {
+        "scicalApiDb": {}
+      },
+      "api": {
+        "scicalApi": {}
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d354mzc4kk41vc",
+          "type": "manual"
+        }
+      }
+    }
+  }
+}

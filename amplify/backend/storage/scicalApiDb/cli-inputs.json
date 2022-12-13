@@ -1,0 +1,10 @@
+{
+  "resourceName": "scicalApiDb",
+  "tableName": "scicalApiDb",
+  "partitionKey": {
+    "fieldName": "eventId",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

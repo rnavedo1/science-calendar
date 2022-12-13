@@ -1,0 +1,8 @@
+[
+  {
+    "Action": ["ses:SendEmail", "ses:SendRawEmail"],
+    "Resource": [
+      "arn:aws:ses:us-east-1:266570965099:identity/rnavedo1@jhmi.edu"
+    ]
+  }
+]
