@@ -164,6 +164,16 @@
                   }
                 ]
               }
+            },
+            {
+              "Effect": "Allow",
+              "Action": [
+                "ses:SendEmail",
+                "ses:SendRawEmail"
+              ],
+              "Resource": [
+                "arn:aws:ses:us-east-1:266570965099:identity/rnavedojr@gmail.com"
+              ]
             }
           ]
         }
@@ -229,14 +239,14 @@
           "Version": "2012-10-17",
           "Statement": [
             {
+              "Effect": "Allow",
               "Action": [
                 "ses:SendEmail",
                 "ses:SendRawEmail"
               ],
               "Resource": [
-                "arn:aws:ses:us-east-1:266570965099:identity/rnavedo1@jhmi.edu"
-              ],
-              "Effect": "Allow"
+                "arn:aws:ses:us-east-1:266570965099:identity/rnavedojr@gmail.com"
+              ]
             }
           ]
         },

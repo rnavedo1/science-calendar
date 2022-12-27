@@ -15,11 +15,11 @@
       "function": {
         "scicalApiFunction": {
           "deploymentBucketName": "amplify-scicalapp-dev-210407-deployment",
-          "s3Key": "amplify-builds/scicalApiFunction-65622b764b524d364d6a-build.zip"
+          "s3Key": "amplify-builds/scicalApiFunction-74426a49326b56322b50-build.zip"
         },
         "scicalSendEmailToApprove": {
           "deploymentBucketName": "amplify-scicalapp-dev-210407-deployment",
-          "s3Key": "amplify-builds/scicalSendEmailToApprove-506f3935467848444e78-build.zip"
+          "s3Key": "amplify-builds/scicalSendEmailToApprove-566b45344b6e446a3832-build.zip"
         }
       },
       "storage": {

@@ -39,7 +39,7 @@ export default function NewEventsForm({ formType, eventToUpdate }) {
         setTimeout(() => setError(""), 3000);
         return;
       }
-      API.post("scicalApi", "/events", {
+      API.post("scicalApi", "/events/eventId", {
         body: {
           published: event.published,
           title: event.title,
@@ -49,13 +49,13 @@ export default function NewEventsForm({ formType, eventToUpdate }) {
           eventId: slug(event.title + "-" + uuidv4()),
         },
       })
-        .then((response) => {
+        .then(() => {
           setSuccess(true);
           setLoading(false);
           setMessage("Event added successfully");
         })
         .catch((error) => {
-          console.log(error.response.data.error.message);
+          console.error(error.response);
           setSuccess(false);
           setLoading(false);
           setError("Something went wrong. Please try again later.");
