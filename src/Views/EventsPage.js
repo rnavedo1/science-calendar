@@ -1,28 +1,29 @@
 import { useEffect, useState } from "react";
 import Container from "../Components/Container";
 import Jumbotron from "../Components/Jumbotron";
-import { API } from "aws-amplify";
 import ScicalList from "../Components/ScicalList";
+import { DataStore } from "@aws-amplify/datastore";
+import { Submits } from "../models";
 
 export default function EventsPage() {
   const [sciCalEvents, setSciCalEvents] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  const getAllEvents = async () => {
+    const allEvents = await DataStore.query(Submits);
+    console.log("allEvents", allEvents);
+    setSciCalEvents(allEvents);
+  };
+
   useEffect(() => {
-    setLoading(true);
-    const apiName = "scicalApi";
-    const path = "/events/eventId";
-    const myInit = {
-      headers: {}, // OPTIONAL
-    };
-    API.get(apiName, path, myInit)
-      .then((response) => {
-        setSciCalEvents(response);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    try {
+      setLoading(true);
+      getAllEvents();
+    } catch (error) {
+      console.error(error.response);
+    } finally {
+      setLoading(false);
+    }
   }, []);
 
   return (
