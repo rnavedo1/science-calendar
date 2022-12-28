@@ -164,7 +164,7 @@ export default function NewEventsForm({ eventToUpdate }) {
         <div>{error && <p className="text-red-500">{error}</p>}</div>
         <Button
           type="submit"
-          label={loading ? "Processing" : "Submit"}
+          label={loading ? "Processing" : "Update"}
           styleClasses="bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded transition-all"
         />
       </form>

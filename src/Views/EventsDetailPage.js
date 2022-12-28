@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { DataStore } from "aws-amplify";
 import { Submits } from "../models";
 import { useNavigate } from "react-router-dom";
+import Moment from "react-moment";
 
 export default function EventsDetailsPage() {
   const navigate = useNavigate();
@@ -26,16 +27,12 @@ export default function EventsDetailsPage() {
   );
 
   useEffect(() => {
-    if (!eventDetail) {
-      getEventDetail(id);
-    } else {
-      getEventDetail(id);
-    }
-  }, [eventDetail, id, getEventDetail]);
+    getEventDetail(id);
+  }, [id]);
 
   // prompt to delete event
   const confirmDeleteEvent = async (id) => {
-    const isConfirmed = window.confirm("Delete this item?");
+    const isConfirmed = window.confirm("Delete this event?");
     if (isConfirmed) {
       await DataStore.delete(Submits, id);
       navigate("/");
@@ -44,13 +41,14 @@ export default function EventsDetailsPage() {
   };
 
   const confirmApproveEvent = async (id) => {
-    const isConfirmed = window.confirm("Approve this item?");
+    const isConfirmed = window.confirm("Approve this event?");
     if (isConfirmed) {
       await DataStore.save(
         Submits.copyOf(eventDetail, (updated) => {
           updated.isPublished = true;
         })
       );
+      navigate("/");
     }
     return;
   };
@@ -72,10 +70,9 @@ export default function EventsDetailsPage() {
           </div>
           <div className="border border-blue-900 rounded-lg p-2 mt-2">
             <div>
-              <span className="font-bold mr-2">Date:</span>
-              <span className="mr-4">{eventDetail.date}</span>
-              <span className="font-bold mr-2">Time:</span>
-              {eventDetail.date}
+              <Moment format="MMMM Do, YYYY, hh:mm A">
+                {eventDetail.date + "T" + eventDetail.time}
+              </Moment>
             </div>
           </div>
         </div>

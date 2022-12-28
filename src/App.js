@@ -4,11 +4,8 @@ import EventsNewPage from "./Views/EventsNewPage";
 import EventsUpdatePage from "./Views/EventsUpdatePage";
 import EventsDetailsPage from "./Views/EventsDetailPage";
 import MainLayout from "./Components/MainLayout";
-import { Amplify } from "aws-amplify";
-import config from "./aws-exports";
 import AdminEvents from "./Views/AdminEvents";
-
-Amplify.configure(config);
+import "moment-timezone";
 
 function App() {
   return (

@@ -1,5 +1,6 @@
 import { atcb_action } from "add-to-calendar-button";
 import "add-to-calendar-button/assets/css/atcb.css";
+import Moment from "react-moment";
 
 export default function ScicalItem({ event }) {
   const addToCalendar = () => {
@@ -27,11 +28,11 @@ export default function ScicalItem({ event }) {
           <td className="p-1">
             <p>
               <strong>Date: </strong>
-              {event.date}
+              <Moment format="MMMM Do, YYYY">{event.date}</Moment>
             </p>
             <p>
               <strong>Time: </strong>
-              {event.time}
+              <Moment format="hh:mm A">{event.date + "T" + event.time}</Moment>
             </p>
           </td>
           <td className="p-1">

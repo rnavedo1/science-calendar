@@ -3,7 +3,7 @@ import ScicalItem from "./ScicalItem";
 // pass the events as props from the EventsPage component
 export default function ScicalList({ sciCalEvents }) {
   const tableCustomStyles = {
-    minWidth: "800px",
+    minWidth: "850px",
     maxWidth: "100%",
     width: "100%",
   };
