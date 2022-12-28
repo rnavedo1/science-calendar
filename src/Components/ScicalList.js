@@ -1,32 +1,46 @@
 import ScicalItem from "./ScicalItem";
 
+// pass the events as props from the EventsPage component
 export default function ScicalList({ sciCalEvents }) {
-  console.log("sciCalEvents", sciCalEvents);
+  const tableCustomStyles = {
+    minWidth: "800px",
+    maxWidth: "100%",
+    width: "100%",
+  };
+
   return (
-    <table className="table-auto container mx-auto border my-4">
-      <thead>
-        <tr className="bg-blue-900 text-white">
-          <th className="border-r">Event Data</th>
-          <th className="border-r">Event Title</th>
-          <th>Contact Information</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      {sciCalEvents.length === 0 ? (
-        <tbody>
-          <tr>
-            <td colSpan="4" className="text-center">
-              No events to display
-            </td>
+    <div className="overflow-x-auto">
+      <table
+        style={tableCustomStyles}
+        className="table-auto min-w-full mx-auto border my-4"
+      >
+        {/* table header */}
+        <thead>
+          <tr className="bg-blue-900 text-white">
+            <th className="border-r">Date & Time</th>
+            <th className="border-r">Details</th>
+            <th className="border-r">Information</th>
+            <th>Download Calendar</th>
           </tr>
-        </tbody>
-      ) : (
-        <tbody>
-          {sciCalEvents.map((event) => (
-            <ScicalItem event={event} key={event.eventId} />
-          ))}
-        </tbody>
-      )}
-    </table>
+        </thead>
+        {/* check if there are events */}
+        {sciCalEvents.length === 0 ? (
+          <tbody>
+            <tr>
+              <td colSpan="4" className="text-center">
+                No events to display
+              </td>
+            </tr>
+          </tbody>
+        ) : (
+          // return the events
+          <tbody>
+            {sciCalEvents.map((event) => (
+              <ScicalItem event={event} key={event.id} />
+            ))}
+          </tbody>
+        )}
+      </table>
+    </div>
   );
 }

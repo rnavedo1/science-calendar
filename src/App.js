@@ -15,13 +15,13 @@ function App() {
     <MainLayout>
       <Routes>
         <Route path="/" element={<EventsPage />} />
-        <Route path="/events/:eventId" element={<EventsDetailsPage />} />
+        <Route path="/events/:id" element={<EventsDetailsPage />} />
         <Route path="/events/new" element={<EventsNewPage />} />
-        <Route path="/events/update/:eventId" element={<EventsUpdatePage />} />
+        <Route path="/events/update/:id" element={<EventsUpdatePage />} />
         <Route path="/admin" element={<AdminEvents />} />
-        {/* make home page /events */}
+        {/* make home page / */}
         {/* if the route does not match redirect to all pages */}
-        <Route path="*" element={<Navigate to="/events" />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </MainLayout>
   );

@@ -1,0 +1,26 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-scical-app-dev-145848-authRole",
+      "UnauthRoleArn": "arn:aws:iam::266570965099:role/amplify-scical-app-dev-145848-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::266570965099:role/amplify-scical-app-dev-145848-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-scical-app-dev-145848-deployment",
+      "UnauthRoleName": "amplify-scical-app-dev-145848-unauthRole",
+      "StackName": "amplify-scical-app-dev-145848",
+      "StackId": "arn:aws:cloudformation:us-east-1:266570965099:stack/amplify-scical-app-dev-145848/e18ad140-8620-11ed-aa1c-0ed2850ed259",
+      "AmplifyAppId": "dy16w53vwmfhm"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "dy16w53vwmfhm",
+          "type": "manual"
+        }
+      },
+      "api": {
+        "amplifyDatasource": {}
+      }
+    }
+  }
+}

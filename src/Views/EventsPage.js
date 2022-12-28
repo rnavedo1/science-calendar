@@ -8,10 +8,10 @@ import { Submits } from "../models";
 export default function EventsPage() {
   const [sciCalEvents, setSciCalEvents] = useState([]);
   const [loading, setLoading] = useState(false);
+  console.log(sciCalEvents);
 
   const getAllEvents = async () => {
     const allEvents = await DataStore.query(Submits);
-    console.log("allEvents", allEvents);
     setSciCalEvents(allEvents);
   };
 
